@@ -6,10 +6,8 @@
 import random
 import treelib
 from treelib import Node, Tree
-import time
 import pickle
 import os.path
-import json
 
 
 
@@ -27,9 +25,7 @@ if os.path.isfile("aatr_treerecreate.dat")==False:
 		open("aatr_treerecreate.dat",mode='x').close()
 		drawrandom=True
 else:
-
-		openfile=open("aatr_treerecreate.dat")
-		print(pickle.load(open("aatr_treerecreate.dat","rb")))
+		openfile=open("aatr_treerecreate.dat")		
 		treerecreate=pickle.load(open("aatr_treerecreate.dat","rb"))
 		drawrandom=False
 ###
@@ -45,9 +41,6 @@ while i<12:
 	listvariable.append(str(i))
 						
         
-#print("Here is the base for the tree")
-#print(tree)
-
 print()
 print()
 drawmaxnumber=len(listvariable)
@@ -84,18 +77,11 @@ while continuemating==True:
         ##Setting the name of the new child
         newchildrenname=str(tree[draw1].tag+str(alphabet[numberofchildren+1]))
         print("New artichoke called ", newchildrenname)
-        #time.sleep(1)
         print("that kid was made from ", tree[draw1].tag, " with ",tree[draw2].tag)
-        #time.sleep(1)
-        print()
-        #time.sleep(1)
-        print()
-        #time.sleep(1)
         
-        ###################### WRONG IDEA ################################
-        ###newchildrenname=str(newchildrenname)+" ("+tree[draw2].tag+")"##
-        ##################################################################
-
+        print()
+       
+        
         ##adding the child to the tree
         tree.create_node(newchildrenname,drawmaxnumber,parent=draw1)
 
