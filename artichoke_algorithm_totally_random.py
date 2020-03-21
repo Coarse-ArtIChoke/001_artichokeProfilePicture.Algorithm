@@ -1,4 +1,4 @@
-##
+## Python 3.8 script
 
 ## This program creates the tree for the iterations of the Artichoke Deep Dreaming from Google
 
