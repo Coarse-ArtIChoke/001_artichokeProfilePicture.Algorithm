@@ -17,6 +17,7 @@ import os.path
 alphabet=[" ","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
 treerecreate=[]
+recreated=False
 
 
 
@@ -63,8 +64,8 @@ while continuemating==True:
             recreationcount=recreationcount+1
             draw2=treerecreate[recreationcount]
             recreationcount=recreationcount+1
-            if recreationcount>len(treerecreate)-1:
-                    drawrandom=True
+            recreated=True
+            
                     
     ##checking if the draw has two different parents
     if draw1!= draw2:
@@ -76,8 +77,14 @@ while continuemating==True:
 
         ##Setting the name of the new child
         newchildrenname=str(tree[draw1].tag+str(alphabet[numberofchildren+1]))
-        print("New artichoke called ", newchildrenname)
-        print("that kid was made from ", tree[draw1].tag, " with ",tree[draw2].tag)
+        if drawrandom==True:
+            if recreated==True:
+                print("And a new artichoke called ", newchildrenname)
+            else :
+                print("A new artichoke called ", newchildrenname)
+        else:
+            print("An artichoke called ", newchildrenname)
+        print("was made from ", tree[draw1].tag, " with ",tree[draw2].tag)
         
         print()
        
@@ -88,6 +95,9 @@ while continuemating==True:
         ##adding child to the list variable
         listvariable.append(str(drawmaxnumber))
         drawmaxnumber=drawmaxnumber+1
+
+        if recreationcount>len(treerecreate)-1:
+                    drawrandom=True
 
         
     if matecount==1:
